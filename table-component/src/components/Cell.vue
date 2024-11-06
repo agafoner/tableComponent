@@ -1,5 +1,6 @@
 <template>
     <!-- {{ line }} {{ col }} {{ type }} {{ readonly }} -->
+    
     <span v-if="readonly">{{value}}</span>
 
 </template> 
@@ -8,15 +9,12 @@
 import { ref, computed, inject, onMounted } from 'vue';
 const store = inject('store');
 
-// const data = computed(() => {
-//     return window.tableData;
-// })
+
 const type=ref(0);
 const readonly=ref(0);
 onMounted(()=> {
     type.value = store.headCellByKey(props.col).type;
     readonly.value = store.headCellByKey(props.col).readonly;
-    // console.log('dima type:', type)
 })
 const props = defineProps(['line','col']);
 const value = computed(()=> {
