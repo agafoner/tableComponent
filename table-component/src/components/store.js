@@ -12,6 +12,9 @@ export const store = reactive( {
         if (this.tableData.length == 0 || this.tableHead.length == 0) {
             console.error('tableApp: Incoming data error',this.tableData,this.tableHead);
         } else console.log('tableApp: Store initiated')
+    },
+    headCellByKey(key) {
+       return this.tableHead.find((el)=>el.key == key);
     }
     
 
