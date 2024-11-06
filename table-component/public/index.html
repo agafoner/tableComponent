@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="top" style="height: 100px; background-color: bisque;" > </div>
+    <div style="display: flex">
+        <div style="width: 150px; background-color: burlywood;"></div>
+        <div id="table-vue2" style="height: 400px; width: 400px;"></div>
+    </div>
+    
+    
+    <div id="footer" style="height: 100px; background-color: bisque;"> </div>
+    <div> </div>
+    <!-- built files will be auto injected -->
+    <script src="./js/chunk-vendors.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        const tableDataAsJSON=`{
+  "head": [
+    {"key": "A", "readonly": "false", "type": "select","selectList": ["1","2","3","4"]},
+    {"key": "B", "readonly": "false", "type": "input"},
+    {"key": "C", "readonly": "true", "type": "formula"},
+    {"key": "D", "readonly": "false", "type": "formula"}
+  ],
+  "data": [
+    {"A": "2", "B": "5","C": "A1+B2", "D": ""},
+    {"A": "3", "B": "3","C": "A2+B2", "D": "A2"}
+  ]
+  }`;
+        window.TableVue.mountNewTable('#table-vue2',{tableDataAsJSON: tableDataAsJSON});
+    </script>
+  </body>
+</html>
