@@ -1,0 +1,33 @@
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>table-component</title><script defer="defer" src="/js/chunk-vendors.js"></script><script defer="defer" src="/js/app.js"></script></head><body><noscript><strong>We're sorry but table-component doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="top" style="height: 100px; background-color: bisque;"></div><div style="display: flex; justify-content: center;"><div id="table-vue2" style="height: 500px; overflow: scroll;"></div></div><div id="footer" style="height: 100px; background-color: bisque;"></div><div></div><script src="./js/chunk-vendors.js"></script><script src="./js/app.js"></script><script>const tableDataAsJSON=`{
+  "head": [
+    {"key": "A", "readonly": "true", "type": "input"},
+    {"key": "B", "readonly": "false", "type": "input"},
+    {"key": "C", "readonly": "false", "type": "select","selectList": ["1","2","3","4"]},
+    {"key": "D", "readonly": "true", "type": "formula", "formula":"=A+B+C"},
+    {"key": "E", "readonly": "false", "type": "formula", "formula":"=A+B"},
+    {"key": "F", "readonly": "false", "type": "formula", "formula":"=C+B+100"}
+  ],
+  "data": [
+    {"A": "2", "B": "5","C": "1", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "2", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "3", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "4", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "1", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "2", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "3", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "4", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "1", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "2", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "3", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "4", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "1", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "2", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "3", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "4", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "1", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "2", "D": "", "E": "", "F": ""},
+    {"A": "2", "B": "5","C": "3", "D": "", "E": "", "F": ""},
+    {"A": "3", "B": "3","C": "4", "D": "", "E": "", "F": ""}
+  ]
+  }`;
+        window.TableVue.mountNewTable('#table-vue2',{tableDataAsJSON: tableDataAsJSON});</script></body></html>
