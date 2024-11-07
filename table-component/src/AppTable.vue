@@ -3,7 +3,10 @@
     <thead>
       <tr>
         <th id="null-cell"></th>
-        <th v-for="cell in store.tableHead">{{ cell.key }}</th>
+        <th id='top-th' v-for="cell in store.tableHead">
+          <HeadCell :cellKey="cell.key">
+          </HeadCell>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -23,10 +26,9 @@
 
 <script setup>
 import { onMounted, provide } from 'vue';
-import TableComponent from './components/TableComponent.vue';
 import Cell from './components/Cell.vue';
 import { store } from './components/store';
-
+import HeadCell from './components/HeadCell.vue';
 
 const props = defineProps(['tableDataAsJSON']);
 provide('store',store)
@@ -51,21 +53,28 @@ onMounted(()=> {
   margin-top: 60px;
 }
 table {
+  table-layout: fixed;
   border: 2px solid #9b9b9b;
 }
 th {
   background-color: azure;
   width: 100px;
 }
+#top-th {
+  height: 40px;
+  width: 100px;
+  overflow: hidden;
+}
 #null-cell {
-  width: 20px;
+  width: 25px;
   background-color: azure;
 }
 td {
-  height: 20px;
+  width: 100px;
+  height: 25px;
   background-color: antiquewhite;
 }
 #index {
-  width: 20px;
+  width: 25px;
 }
 </style>
